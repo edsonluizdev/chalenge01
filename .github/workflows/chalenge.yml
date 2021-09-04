@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show date in ubuntu
-      - run: echo $(date)
+        run: echo $(date) 
