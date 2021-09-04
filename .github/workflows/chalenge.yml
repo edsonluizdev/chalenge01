@@ -10,3 +10,22 @@ jobs:
     steps:
       - name: Show date in ubuntu
         run: echo $(date) 
+  job2:
+    name: Execute job2
+    runs-on: windows-latest
+    steps:
+      - name: Show date in Windows
+        run: Get-Date
+  job3:
+    name: Execute job3
+    runs-on: macos-latest
+    steps:
+      - name: Show date in macOS
+        run: echo $(date) 
+  job4:
+    name: Execute job4
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show date after all jobs are completed
+        run: echo $(date) 
